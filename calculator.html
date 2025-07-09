@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+<center></center>
+<div id="calculator">
+    <input id="display">
+    <div id="keys">
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('4')">4</button><br><br>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button><br><br>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
+        <button onclick="append('0')">0</button>
+        <button onclick="append('-')">-</button><br><br>
+        <button onclick="append('*')">*</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="cleardisplay()">CLR</button>
+
+    </div>
+</div>
+<script>
+    const display=document.getElementById("display");
+ function append(input){
+    display.value += input;
+ }
+ function cleardisplay(){
+  display.value="";
+}
+function calculate(){
+    try{
+      display.value=eval(display.value);
+    }
+    catch{
+      display.value="ERROR";
+    }
+}
+</script>
+
+
+</body>
+</html>
